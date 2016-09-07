@@ -1,0 +1,51 @@
+1查看安装的软件：
+    rpm -ql 软件名
+    rpm -aq查看所有软件；查看指定名字的软件：rpm -aq|grep 软件名；可以使用：rpm --help查看详细参数
+
+
+2 Linux下如何查看版本信息， 包括位数、版本信息以及CPU内核信息、CPU具体型号等等，整个CPU信息一目了然
+    	1、# uname －a   （Linux查看版本当前操作系统内核信息）
+	2、# cat /proc/version （Linux查看当前操作系统版本信息）
+	3、# cat /etc/issue  或cat /etc/redhat-release（Linux查看版本当前操作系统发行版信息）
+	4、# cat /proc/cpuinfo （Linux查看cpu相关信息，包括型号、主频、内核信息等）
+
+3 查看内存 ：free
+
+4 rm -rf /var/log/httpd/access
+将会删除/var/log/httpd/access目录以及其下所有文件、文件夹
+
+查看快设备状态信息：lsblk
+快设备格式化：mkfs -t ext4 /dev/sdb
+创建/data目录：mkdir -m 777 /data
+将快设备与/data目录绑定：mount /dev/sdb /data
+
+5 查看Java进程 ps -ef|grep java    查看端口  netstat -atunp
+  ps -aux  kill -9 PID	
+
+6 更改root密码  sudo passwd root
+
+7 解压 tar -xvzf xxx
+  压缩 tar -cvzf  路径/xxx.tar.gz xxx
+  查看 tar -tvf  xxx.tar.gz
+
+8 修改配置文件 vi /etc/profile  -》 source /etc/profile 是配置文件生效
+
+9 查看flume是否安装成功  flume-ng version
+
+10 查找文件  find / -name flume
+
+11调试运行 sh -x store_analyse_startup_1days_20160322.sh 2016-05-15
+
+12 hadoop  fs -cat /0119-D092-36D2-A130-E207-100F-0A7A-BBB3-EF6A-9B77-7608/2016-06-12/*/*  | wc -l
+
+13
+	Shell>mysqldump -uroot –p123456 tm > tm_050519.sql
+	这时可以利用gzip压缩数据，命令如下：
+	Shell>mysqldump -uroot -p123456 tm | gzip > tm_050519.sql.gz
+	恢复数据：
+	Shell>mysql -uboston -ptest2016 product0729< bk_product20160812.sql
+	从压缩文件直接恢复：
+	Shell>gzip -d < tm_050519.sql.gz | mysql -uroot -p123456 tm
+
+
+
